@@ -23,12 +23,15 @@ function showPage(id) {
 }
 navLinks.forEach(link => link.addEventListener('click', () => showPage(link.dataset.page)));
 document.querySelectorAll('[data-goto]').forEach(button => button.addEventListener('click', () => showPage(button.dataset.goto)));
-document.getElementById('backHome').addEventListener('click', () => showPage('home'));
-menuToggle.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.textContent = open ? '×' : '☰';
+document.getElementById('backHome')?.addEventListener('click', () => showPage('home'));
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.textContent = isOpen ? '×' : '☰';
 });
+}
 
 // Certificate filters
 document.querySelectorAll('[data-filter]').forEach(button => {
