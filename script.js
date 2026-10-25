@@ -43,26 +43,7 @@ document.querySelectorAll('[data-filter]').forEach(button => {
   });
 });
 
-// A static site cannot store submissions securely without a backend.
-// Prepare an email draft instead, so the visitor's details are not silently sent to a third party.
-document.getElementById('contactForm').addEventListener('submit', event => {
-  event.preventDefault();
-  const form = event.currentTarget;
-  if (!form.reportValidity()) return;
-  const data = new FormData(form);
-  const subject = `Portfolio enquiry: ${data.get('reason')}`;
-  const body = [
-    `Name: ${data.get('name')}`,
-    `Mobile: ${data.get('mobile')}`,
-    `Email: ${data.get('email')}`,
-    `Reason: ${data.get('reason')}`,
-    '',
-    'Message:',
-    data.get('message') || '(No additional message)'
-  ].join('\n');
-  const status = document.getElementById('formStatus');
-  status.textContent = 'Your email app should open with the message details. Review and send it there.';
-  window.location.href = `mailto:nitinverma7546@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-});
-document.getElementById('year').textContent = new Date().getFullYear();
+// Contact form submission is handled by firebase-contact.js.
+const yearElement = document.getElementById('year');
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 pages.forEach(page => page.setAttribute('aria-hidden', String(!page.classList.contains('active'))));
