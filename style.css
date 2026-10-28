@@ -98,7 +98,8 @@ button {
 nav {
     display: flex;
     align-items: center;
-    gap: 6px
+    gap: 6px;
+    max-width: 420px;
 }
 
 .nav-link {
@@ -170,7 +171,7 @@ main {
     gap: 5%;
     align-items: center;
     min-height: 540px;
-    padding: 54px 0 66px
+    padding: 20px 0 20px
 }
 
 .eyebrow,
@@ -219,7 +220,7 @@ main {
 .hero h2 {
     font: 600 clamp(19px, 2vw, 26px)/1.5 var(--display);
     letter-spacing: -.03em;
-    margin: 0 0 17px
+    margin: 10 0 10px
 }
 
 .muted {
@@ -231,11 +232,12 @@ main {
     font-size: 15px;
     line-height: 1.85;
     color: #696a64;
-    max-width: 470px
+    max-width: 420px
 }
 
 .intro {
-    margin: 0 0 26px
+    margin: 0 0 27px;
+
 }
 
 .hero-actions {
@@ -449,7 +451,7 @@ main {
 }
 
 .page-heading {
-    padding: 65px 0 35px;
+    padding: 10px 0 10px;
     border-bottom: 1px solid var(--line);
     display: flex;
     align-items: flex-end;
@@ -919,7 +921,7 @@ main {
     display: grid;
     grid-template-columns: 1fr .85fr;
     gap: 10%;
-    padding: 68px 0 40px
+    padding: 10px 0 10px
 }
 
 .contact-copy h1 {
